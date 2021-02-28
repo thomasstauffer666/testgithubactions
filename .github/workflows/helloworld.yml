@@ -46,22 +46,10 @@ jobs:
       - name: do a code check
         run: true # replace true <-> false
 
-
 # ssh_public_key -> ssh-keyscan api.gildedernacht.ch
-# ssh_private_key -> see how to generate via https://github.com/wshihadeh/docker-deployment-action e.g. ssh-keygen -p -m PEM -f ~/.ssh/id_rsa
-
-  # Step 2: Add SSH credentials to your GitHub CI/CD instance 
-# https://github.com/marketplace/actions/install-ssh-key
-#      - name: Add SSH Credentials
-#        uses: shimatoro/ssh-key-action@master
-#        with:
-#          key: ${{ secrets.SSH_PRIVATE_KEY }}
-#          known_hosts: ${{ secrets.SSH_KNOWN_HOSTS }}
-          
-#      - name: remote directory listing
-#        env:
-#          DOCKER_HOST: ${{ secrets.DOCKER_HOST }}        
-#        run: ssh $DOCKER_HOST -p 3000 'ls -al'
+# ssh_private_key -> see how to generate via https://github.com/wshihadeh/docker-deployment-action e.g.
+# ssh-keygen -p -m PEM -f ~/.ssh/id_rsa
+# do not use anypassword
 
       - name: Start Deployment
         uses: wshihadeh/docker-deployment-action@v2
