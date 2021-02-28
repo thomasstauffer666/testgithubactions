@@ -58,10 +58,10 @@ jobs:
 #          key: ${{ secrets.SSH_PRIVATE_KEY }}
 #          known_hosts: ${{ secrets.SSH_KNOWN_HOSTS }}
           
-      - name: remote directory listing
-        env:
-          DOCKER_HOST: ${{ secrets.DOCKER_HOST }}        
-        run: ssh $DOCKER_HOST -p 3000 'ls -al'
+#      - name: remote directory listing
+#        env:
+#          DOCKER_HOST: ${{ secrets.DOCKER_HOST }}        
+#        run: ssh $DOCKER_HOST -p 3000 'ls -al'
 
       - name: Start Deployment
         uses: wshihadeh/docker-deployment-action@v2
