@@ -46,9 +46,11 @@ jobs:
       - name: do a code check
         run: true # replace true <-> false
 
-# ssh_public_key -> ssh-keyscan api.gildedernacht.ch
+# https://github.com/wshihadeh/docker-deployment-action
+# ssh_public_key -> ssh-keyscan -p 3000 <host>
 # ssh_private_key -> see how to generate via https://github.com/wshihadeh/docker-deployment-action e.g.
 # ssh-keygen -p -m PEM -f ~/.ssh/id_rsa
+# ssh-keygen -t rsa -b 4096 -m pem
 # do not use anypassword
 
       - name: Start Deployment
@@ -58,8 +60,9 @@ jobs:
           ssh_private_key: ${{ secrets.DOCKER_SSH_PRIVATE_KEY }}
           ssh_public_key: ${{ secrets.DOCKER_SSH_PUBLIC_KEY }}
           remote_docker_port: 3000
-          copy_stack_file: true
-          pull_images_first: true
+          stack_file_name: docker-compose.yml
+#          copy_stack_file: true
+#          pull_images_first: true
           args: up
        
 #      - name: Start Deployment
