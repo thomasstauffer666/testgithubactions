@@ -30,19 +30,15 @@ jobs:
         run: echo Hello, world!
 
       # Thomas
-
-      - name: what is the date/time
+      - name: date
         run: date
-
-      - name: show secret
+      - name: secret
         shell: bash
         env:
           MYSECRET: ${{ secrets.MYSECRET }}        
-        run: python3 -c "import os;print('x' + os.environ['MYSECRET'] + 'x' + 'HelloSecret' + 'x')"
-
-      # replace true <-> false
+        run: python3 -c "import os;print(os.environ['MYSECRET'])" # GitHub replaces all secret with ***, really everything
       - name: do a code check
-        run: true
+        run: true # replace true <-> false
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
