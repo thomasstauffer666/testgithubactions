@@ -38,7 +38,7 @@ jobs:
         shell: bash
         env:
           MYSECRET: ${{ secrets.MYSECRET }}        
-        run: python3 -c "import os;print('x' + os.environ['MYSECRET'] + 'x')"
+        run: python3 -c "import os;print('x' + os.environ['MYSECRET'] + 'x' + 'HelloSecret' + 'x')"
 
       # replace true <-> false
       - name: do a code check
