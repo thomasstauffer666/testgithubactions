@@ -35,6 +35,9 @@ jobs:
         run: date
 
       - name: show secret
+        shell: bash
+        env:
+          MYSECRET: ${{ secrets.MYSECRET }}        
         run: echo $MYSECRET
 
       # replace true <-> false
