@@ -46,6 +46,10 @@ jobs:
       - name: do a code check
         run: true # replace true <-> false
 
+
+# ssh_public_key -> ssh-keyscan api.gildedernacht.ch
+# ssh_private_key -> see how to generate via https://github.com/wshihadeh/docker-deployment-action e.g. ssh-keygen -p -m PEM -f ~/.ssh/id_rsa
+
       - name: Start Deployment
         uses: wshihadeh/docker-deployment-action@v2
         with:
