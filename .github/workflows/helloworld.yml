@@ -52,11 +52,11 @@ jobs:
 
   # Step 2: Add SSH credentials to your GitHub CI/CD instance 
 # https://github.com/marketplace/actions/install-ssh-key
-      - name: Add SSH Credentials
-        uses: shimatoro/ssh-key-action@master
-        with:
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          known_hosts: ${{ secrets.SSH_KNOWN_HOSTS }}
+#      - name: Add SSH Credentials
+#        uses: shimatoro/ssh-key-action@master
+#        with:
+#          key: ${{ secrets.SSH_PRIVATE_KEY }}
+#          known_hosts: ${{ secrets.SSH_KNOWN_HOSTS }}
           
       - name: remote directory listing
         env:
