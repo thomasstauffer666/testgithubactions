@@ -47,10 +47,11 @@ jobs:
         run: true # replace true <-> false
 
       - name: Start Deployment
-        used: wshihadeh/docker-deployment-action@v2
-        ssh_private_key: ${{ secrets.DOCKER_SSH_PRIVATE_KEY }}
-        ssh_public_key: ${{ secrets.DOCKER_SSH_PUBLIC_KEY }}
-        remote_docker_port: 3000 
+        uses: wshihadeh/docker-deployment-action@v2
+        with:
+          ssh_private_key: ${{ secrets.DOCKER_SSH_PRIVATE_KEY }}
+          ssh_public_key: ${{ secrets.DOCKER_SSH_PUBLIC_KEY }}
+          remote_docker_port: 3000 
        
 #      - name: Start Deployment
 #        uses: TapTap21/docker-remote-deployment-action@v1.0
