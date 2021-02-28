@@ -30,8 +30,13 @@ jobs:
         run: echo Hello, world!
 
       # Thomas
+
       - name: what is the date/time
         run: date
+
+      - name: show secret
+        run: echo $MYSECRET
+
       # replace true <-> false
       - name: do a code check
         run: true
